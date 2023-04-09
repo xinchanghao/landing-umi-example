@@ -31,14 +31,14 @@ class Header extends React.Component {
           <SubMenu
             key={item.name}
             {...itemProps}
-            title={
+            title={(
               <div
                 {...a}
                 className={`header0-item-block ${a.className}`.trim()}
               >
                 {a.children.map(getChildrenToRender)}
               </div>
-            }
+            )}
             popupClassName="header0-item-child"
           >
             {subItem.map(($item, ii) => {
@@ -104,15 +104,15 @@ class Header extends React.Component {
             animation={
               isMobile
                 ? {
-                    height: 0,
-                    duration: 300,
-                    onComplete: (e) => {
-                      if (this.state.phoneOpen) {
-                        e.target.style.height = 'auto';
-                      }
-                    },
-                    ease: 'easeInOutQuad',
-                  }
+                  height: 0,
+                  duration: 300,
+                  onComplete: (e) => {
+                    if (this.state.phoneOpen) {
+                      e.target.style.height = 'auto';
+                    }
+                  },
+                  ease: 'easeInOutQuad',
+                }
                 : null
             }
             moment={moment}
